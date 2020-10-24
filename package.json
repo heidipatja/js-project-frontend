@@ -1,20 +1,33 @@
 {
   "name": "js-project-frontend",
+  "description": "jsramverk project frontend",
   "version": "0.1.0",
   "private": true,
+  "author": "Heidi Patja",
+  "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "chart.js": "^2.9.3",
     "react": "^16.14.0",
+    "react-chartjs-2": "^2.10.0",
     "react-dom": "^16.14.0",
-    "react-scripts": "3.4.3"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "socket.io-client": "^2.3.1",
+    "geckodriver": "^1.20.0",
+    "eslint": "^6.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "mocha test/*.js",
+    "eject": "react-scripts eject",
+    "eslint": "eslint ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +43,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-react": "^7.21.5",
+    "http-server": "^0.11.1",
+    "javascript-style-guide": "^1.0.1",
+    "mocha": "^4.1.0",
+    "selenium-webdriver": "^3.6.0"
   }
 }

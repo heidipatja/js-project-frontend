@@ -1,38 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Staatliches&display=swap');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body,
+html {
+    background-color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+canvas {
+    height: 100% !important;
+    width: 100% !important;
+    margin-bottom: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+    background-color: #fff;
+    margin: 3.5rem auto 0;
+    max-width: 100%;
+    text-align: left;
+    padding: 1rem 2rem 0;
+    min-height: 30rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+    padding-inline-start: 0;
+}
+
+ol {
+    padding-inline-start: 20px;
+}
+
+main ul {
+    list-style-type: none;
+}
+
+nav {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    display: flex;
+}
+
+.top-nav {
+    background: #34a29c;
+    top: 0;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    min-height: 2rem;
+    padding-bottom: 0.4rem;
+}
+
+.bottom-nav {
+    background-color: #333;
+    bottom: 0;
+}
+
+footer {
+    display: none;
+}
+
+.navContainer {
+    margin: 0 auto;
+    flex-flow: row nowrap;
+    display: flex;
+    justify-content: space-evenly;
+    width: 39rem;
+}
+
+.navContainer a {
+    display: inline;
+    font-size: 0.8rem;
+    color: #cafffc;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.navContainer svg {
+    margin: 0 auto 0.15rem;
+    font-size: 0.9rem;
+}
+
+.site-name {
+    align-self: center;
+    flex-grow: 2;
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.2rem;
+    padding: 0.3rem 0;
+    text-transform: uppercase;
+}
+
+a,
+p,
+textarea,
+body,
+span {
+    font-family: 'Lato', sans-serif;
+}
+
+p {
+    line-height: 1.4;
+}
+
+a {
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 1px solid $blue;
+    margin-top: 0.7rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+}
+
+h3 {
+    font-size: 1.7rem;
+    /* margin-bottom: 1rem; */
+}
+
+h4 {
+    font-size: 1.375rem;
+    margin: 0 0 0.7rem;
+}
+
+h5,
+h6 {
+    font-size: 1.2rem;
+}
+
+svg {
+    width: 1rem;
+}
+
+.waiting {
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+}
+
+.fa-home,
+.fa-sign-in-alt,
+.fa-sign-out-alt,
+.fa-chart-line,
+.fa-user-tie {
+    color: #dafdfb;
+    display: block;
+}
+
+.iconText {
+    color: #dafdfb;
+}
+
+.fa-arrow-up,
+.fa-arrow-down {
+    font-size: 1.3rem;
+}
+
+.fa-arrow-down {
+    color: #f76c6c;
+}
+
+.fa-arrow-up {
+    color: #57c5bf;
+}
+
+.col1 {
+    flex: 0 1 15%;
+    flex-direction: column;
+}
+
+.col2 {
+    flex: 0 1 13%;
+    display: flex;
+    flex-direction: column;
+}
+
+.col3 {
+    flex: 0 1 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.col4 {
+    display: flex;
+    flex: 0 1 12%;
+    flex-direction: column;
+}
+
+.col5 {
+    display: flex;
+    flex: 0 1 12%;
+    flex-direction: column;
+}
+
+.col6 {
+    display: flex;
+    flex: 0 1 28%;
+    flex-direction: column;
+}
+
+.fa-horse-head,
+.fa-bacon,
+.fa-ice-cream {
+    color: #fbd25b;
+    font-size: 1.5rem;
+}
+
+.fa-horse-head {
+    margin: 0;
+}
+
+.fa-bacon {
+    margin-left: -0.2rem;
+}
+
+.fa-ice-cream {
+    margin: 0;
+}
+
+.currency {
+    line-height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 0.5rem 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #c7c7c7;
+    justify-content: flex-start;
+}
+
+.currencyIcon {
+    margin-top: 0.5rem;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 3px #fbd25b;
+    padding: 0.5em 0.6em;
+    height: 2.5rem;
+    width: 2.5rem;
+    background: #fff;
+}
+
+.currencyHeading {
+    font-weight: 400;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: -0.5rem;
+}
+
+.currencyPrevRate,
+.currencyValue {
+    color: #5d5d5d;
+}
+
+.currencyInfo {
+    font-size: 0.75rem;
+    margin-bottom: -0.5rem;
+}
+
+.currencyValue,
+.currencyRate {
+    font-weight: 400;
+}
+
+.messageBox {
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.messageBox.fail {
+    border: 1px solid #fba7a7;
+    background-color: #ffeded;
+}
+
+.currentBalance {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+}
+
+.tradeMessage {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.tradeBalance {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #c7c7c7;
+    justify-content: flex-start;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    background-color: #ffefbf;
+}
+
+.tradeBalance.span {
+    font-family: 'Lato', sans-serif;
+}
+
+button,
+.linkButton {
+    border: 1px solid #57c5bf;
+    background: #57c5bf;
+    color: #333;
+    text-decoration: none;
+    box-sizing: border-box;
+    max-width: 100%;
+    text-align: center;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    display: block;
+    width: 100%;
+    padding: 0.9rem 4rem;
+    margin: 1.5rem 0;
+    font-weight: 400;
+    font-family: "Josefin Sans";
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.buttons {
+    display: flex;
+    flex: 1 0 20%;
+}
+
+.submitButton,
+.cancelButton {
+    max-width: 50%;
+}
+
+
+.submitButton {
+    margin-right: 1rem;
+}
+
+.loginButton,
+.registerButton {
+    max-width: 100%;
+}
+
+.cancelButton {
+    background-color: #e7e7e7;
+    border-color: #e7e7e7;
+    color: #333;
+}
+
+.closeButton {
+    background-color: #e7e7e7;
+    border-color: #e7e7e7;
+    color: #333;
+    max-width: 100%;
+}
+
+.saveButton {
+    max-width: 100%;
+}
+
+.buttonBuy,
+.buttonSell {
+    padding: 0.2rem 0;
+    height: 2.3rem;
+    margin: 3.6rem 0 0;
+    color: #333;
+    font-weight: 200;
+}
+
+.buttonBuy {
+    margin-right: 1rem;
+    background: #fbd25b;
+    border-color: #fbd25b;
+}
+
+.buttonSell {
+    background: #57c5bf;
+    border-color: #57c5bf;
+}
+
+input,
+select,
+.input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    border-radius: 0.2rem;
+    padding: 0.6rem 0.6rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    min-height: 3rem;
+    max-width: 100%;
+    font-size: 1rem;
+}
+
+input[readOnly] {
+    color: gray;
+}
+
+label {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.5rem;
+    display: block;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 10rem;
+    padding: 0.4rem;
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+    main {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        padding: 1rem 1rem 4rem;
+    }
+
+    .currency {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .buttonBuy,
+    .buttonSell {
+        max-width: 50%;
+    }
+
+    .col1 {
+        display: flex;
+        flex: 1 0 40%;
+        margin-bottom: 1.5rem;
+    }
+
+    .col2 {
+        display: flex;
+        flex: 1 0 60%;
+    }
+
+    .col3 {
+        display: flex;
+        flex: 1 0 30%;
+    }
+
+    .col4 {
+        flex: 1 0 30%;
+        display: flex;
+    }
+
+    .col5 {
+        display: flex;
+        flex: 1 0 10%;
+    }
+
+    .col6 {
+        margin-top: -2.5rem;
+        display: flex;
+        flex: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .top-nav {
+        min-height: 3rem;
+    }
+
+    .bottom-nav {
+        top: 3rem;
+        bottom: unset;
+        padding: 1rem 0;
+    }
+
+    .navContainer a {
+        display: inline;
+        font-size: 0.9rem;
+        color: #cafffc;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .navContainer svg {
+        margin: 0 0.5rem 0rem 0;
+        font-size: 0.9rem;
+    }
+
+    .deposit,
+    button,
+    .closeButton,
+    .saveButton,
+    .loginButton,
+    .registerButton {
+        max-width: 30rem;
+        margin: 1.5rem 0;
+    }
+
+    input[name=password],
+    input[name=email] {
+        max-width: 30rem;
+    }
+
+    .deposit input {
+        margin-top: 0.5rem;
+    }
+
+    .fa-home,
+    .fa-sign-in-alt,
+    .fa-sign-out-alt,
+    .fa-chart-line,
+    .fa-user-tie {
+        margin: 0 0.5rem 0 0;
+        display: inline-block;
+    }
+
+    .fa-user-tie {
+        vertical-align: -0.05rem;
+    }
+
+    main {
+        padding: 1rem 2rem;
+        margin: 7rem auto 3rem;
+    }
+
+    footer {
+        padding: 0 1rem;
+        background: #333;
+        bottom: 0;
+        position: fixed;
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        z-index: 1;
+        color: white;
+    }
+
+    .footerContainer {
+        float: right;
+        width: 100%;
+    }
+
+    footer p {
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        float: right;
+        margin-right: 1rem;
+        padding-top: 0.2rem;
+    }
 }
