@@ -26,14 +26,6 @@ test.describe("Test login page with Selenium", function() {
         done();
     });
 
-    function assertH1(target) {
-        browser.findElement(By.css("h1")).then(function(element) {
-            element.getText().then(function(text) {
-                assert.equal(text, target);
-            });
-        });
-    }
-
     function login() {
         let email = "heidi@gmail.com";
 
@@ -56,7 +48,9 @@ test.describe("Test login page with Selenium", function() {
     test.it("Test login and end up on Account page", function(done) {
         login();
 
-        assertH1("ACCOUNT");
+        browser.getCurrentUrl().then(function(url) {
+            assert.ok(url.endsWith("profile"));
+        });
 
         done();
     });
@@ -98,7 +92,9 @@ test.describe("Test login page with Selenium", function() {
             element.click();
         });
 
-        assertH1("LOGIN");
+        browser.getCurrentUrl().then(function(url) {
+            assert.ok(url.endsWith("login"));
+        });
 
         done();
     });
