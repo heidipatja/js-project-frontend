@@ -1,3 +1,6 @@
+[![Build Status](https://scrutinizer-ci.com/g/heidipatja/js-project-frontend/badges/build.png?b=main)](https://scrutinizer-ci.com/g/heidipatja/js-project-frontend/build-status/main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/heidipatja/js-project-frontend/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/heidipatja/js-project-frontend/?branch=main)
+
 ## Available Scripts
 
 ### `npm install`
