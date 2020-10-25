@@ -23,8 +23,8 @@ class Login extends Component {
         event.preventDefault();
 
         const apiUrl = process.env.NODE_ENV === "development"
-            ? "http://localhost:8333"
-            : "https://me-api.heidipatja.me";
+            ? "http://localhost:8303"
+            : "https://project-api.heidipatja.me";
 
         fetch(apiUrl + "/login", {
             method: 'POST',
@@ -38,7 +38,6 @@ class Login extends Component {
         })
             .then(res => res.json())
             .then(response => {
-                console.log(response.data);
                 if (response.data) {
                     token.token = response.data.token;
                     token.id = response.data.id;

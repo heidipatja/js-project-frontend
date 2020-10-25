@@ -4,8 +4,8 @@ import { token } from "./Token.js";
 
 const Deposit = ({ balance, setBalance, setUser, deposit, setDeposit, toggleButton }) => {
     const apiUrl = process.env.NODE_ENV === "development"
-        ? "http://localhost:8333"
-        : "https://me-api.heidipatja.me";
+        ? "http://localhost:8303"
+        : "https://project-api.heidipatja.me";
 
     const onSubmit = (event) => {
         event.preventDefault();

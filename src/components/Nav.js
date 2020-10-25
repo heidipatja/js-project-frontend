@@ -20,19 +20,21 @@ const Nav = ({ loginStatus, logout }) => {
                         <FontAwesomeIcon icon={faHome} />
                         <span className="iconText">Home</span>
                     </Link>
-                    <Link to="/trade">
-                        <FontAwesomeIcon icon={faChartLine} />
-                        <span className="iconText">Trade</span>
-                    </Link>
-                    <Link to="/profile">
-                        <FontAwesomeIcon icon={faUserTie} />
-                        <span className="iconText">Account</span>
-                    </Link>
                     {loginStatus ? (
-                        <Link to="/login" onClick={logout}>
-                            <FontAwesomeIcon icon={faSignOutAlt} />
-                            <span className="iconText">Logout</span>
-                        </Link>
+                        <>
+                            <Link to="/trade">
+                                <FontAwesomeIcon icon={faChartLine} />
+                                <span className="iconText">Trade</span>
+                            </Link>
+                            <Link to="/profile">
+                                <FontAwesomeIcon icon={faUserTie} />
+                                <span className="iconText">Account</span>
+                            </Link>
+                            <Link to="/login" onClick={logout}>
+                                <FontAwesomeIcon icon={faSignOutAlt} />
+                                <span className="iconText">Logout</span>
+                            </Link>
+                        </>
                     ) : (
                         <Link to="/login">
                             <FontAwesomeIcon icon={faSignInAlt} />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Balance from "./Balance.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown, faHorseHead, faIceCream, faBacon }
@@ -11,8 +12,8 @@ const Trade = ({ data }) => {
     const [user, setUser] = useState([]);
 
     const apiUrl = process.env.NODE_ENV === "development"
-        ? "http://localhost:8333"
-        : "https://me-api.heidipatja.me";
+        ? "http://localhost:8303"
+        : "https://project-api.heidipatja.me";
 
     useEffect(() => {
         fetch(apiUrl + "/profile/" + token.id, {
@@ -30,7 +31,7 @@ const Trade = ({ data }) => {
         return (
             <div>
                 <div className="tradeBalance">
-                    Current balance: {Math.round((user.balance * 100) / 100)} SEK
+                    <Balance user={user} />
                 </div>
                 <div className="currencies">
 

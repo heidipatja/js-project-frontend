@@ -2,3 +2,4 @@ src/serviceWorker.js
 src/setupTests.js
 src/App.test.js
 src/index.js
+build/*

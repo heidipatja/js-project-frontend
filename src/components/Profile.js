@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import Balance from "./Balance.js";
 import Deposit from "./Deposit.js";
 import { token } from "./Token.js";
 
@@ -17,8 +18,8 @@ const Profile = () => {
 
     useEffect(() => {
         const apiUrl = process.env.NODE_ENV === "development"
-            ? "http://localhost:8333"
-            : "https://me-api.heidipatja.me";
+            ? "http://localhost:8303"
+            : "https://project-api.heidipatja.me";
 
         fetch(apiUrl + "/profile/" + token.id, {
             method: 'GET',
@@ -54,32 +55,21 @@ const Profile = () => {
         return <button onClick={toggleButton}>Make deposit</button>;
     };
 
-    const handleDeposit = () => {
-        return (
-            <div className="deposit">
-                {depositForm &&
-                    <Deposit
-                        balance={balance}
-                        setBalance={setBalance}
-                        deposit={deposit}
-                        setDeposit={setDeposit}
-                        setUser={setUser}
-                        toggleButton={toggleButton}
-                    />}
-                {!depositForm && makeDepositButton()}
-            </div>
-        );
-    };
-
     return (
         <main>
             <h1>Account</h1>
             <p>Welcome!</p>
-            <div className="balance">
-                Your balance is:
-                <span className="balanceNumber"> {Math.round(user.balance * 100)/100}</span> SEK
-            </div>
-            {handleDeposit()}
+            <Balance user={user} />
+            {depositForm &&
+                <Deposit
+                    balance={balance}
+                    setBalance={setBalance}
+                    deposit={deposit}
+                    setDeposit={setDeposit}
+                    setUser={setUser}
+                    toggleButton={toggleButton}
+                />}
+            {!depositForm && makeDepositButton()}
         </main>
     );
 };

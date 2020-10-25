@@ -43,7 +43,7 @@ const App = () => {
                     )}
                 />
                 <Route exact path="/register" component={Register} />
-                <PrivateRoute path="/profile/" component={Profile} />
+                <PrivateRoute path="/profile" component={Profile} />
                 <PrivateRoute path="/trade" component={Trading}/>
                 <PrivateRoute
                     path="/tradeform/:type/:currency/:rate/:amount" component={TradeForm} />

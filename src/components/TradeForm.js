@@ -14,8 +14,8 @@ const TradeForm = () => {
     const [success, setSuccess] = useState(false);
 
     const apiUrl = process.env.NODE_ENV === "development"
-        ? "http://localhost:8333"
-        : "https://me-api.heidipatja.me";
+        ? "http://localhost:8303"
+        : "https://project-api.heidipatja.me";
 
     useEffect(() => {
         document.title = "Trade form";

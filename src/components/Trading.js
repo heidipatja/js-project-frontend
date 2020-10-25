@@ -36,8 +36,8 @@ const Trading = () => {
     });
 
     const socketUrl = process.env.NODE_ENV === "development"
-        ? "http://localhost:8300"
-        : "https://socket-server.heidipatja.me/";
+        ? "http://localhost:8383"
+        : "https://project-socket.heidipatja.me/";
 
     useEffect(() => {
         document.title = "Trade";
