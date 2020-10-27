@@ -33,7 +33,7 @@ const Profile = () => {
             .then(res => setBalance(user.balance))
             .then(showDepositForm(false))
             .then(showDepositButton(true));
-    }, [balance]);
+    }, [balance, user.balance]);
 
     // eslint-disable-next-line
     const onClick = (event) => {
