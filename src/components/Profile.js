@@ -30,6 +30,7 @@ const Profile = () => {
         })
             .then(res => res.json())
             .then(res => setUser(res))
+            .then(res => setBalance(user.balance))
             .then(showDepositForm(false))
             .then(showDepositButton(true));
     }, [balance]);
